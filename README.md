@@ -1,6 +1,6 @@
 # Forum - Initiation à l'Informatique
 ##### Auteur: Florian Dambrine (@Lowess)
-##### Date: 26/01/2017
+##### Date: 16/02/2017
 ----------------------------------------
 
 L'idée du projet `Forum` est de découvrir les différents aspects de l'informatique à travers plusieurs ateliers qui sont:
