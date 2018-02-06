@@ -66,3 +66,17 @@ Remplacer une chaîne "search" par "replace" dans tous les fichiers ".php" d'un 
 Ex : find ./ -type f -exec sed -i '' 's#search#replace#' *.php {} \;
 
 adresse serveur site internet: 192.168.33.33
+
+Commandes pour mettre à jour mon projet GitHub depuis ma machine:
+
+ Vous pouvez proposer un changement (l'ajouter à l'Index) en exécutant les commandes
+git add <filename>
+git add *
+C'est la première étape dans un workflow git basique. Pour valider ces changements, utilisez
+git commit -m "Message de validation"
+Le fichier est donc ajouté au HEAD, mais pas encore dans votre dépôt distant.
+envoyer des changements
+
+Vos changements sont maintenant dans le HEAD de la copie de votre dépôt local. Pour les envoyer à votre dépôt distant, exécutez la commande
+git push origin master
+Remplacez master par la branche dans laquelle vous souhaitez envoyer vos changements.
