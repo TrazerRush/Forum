@@ -24,17 +24,17 @@ Pour les questions suivantes proposer une commande `Linux` pour répondre au pro
 
 * Vérifier la taille du disque dur: 
 ```
-$ ?
+$ df -h /
 ```
         
 * Se déplacer dans le dossier `/opt/videogames`:    
 ```
-$ ?
+$ cd /opt/videogames
 ```
 
 * Créer les dossiers `/opt/videogames/ps4`  et `/opt/videogames/nintendo`:
 ```
-$ ?
+$ mkdir /opt/videogames/ps4 mkdir /opt/videogames/nintendo
 ```
   
 * Utiliser un éditeur de texte pour créer le fichier `/opt/videogames/ps4/sonic.info` et écrire les informations suivantes:
@@ -45,7 +45,7 @@ Sonic possède un éventail de mouvements spéciaux sans cesse renouvelés et am
 ```
 
 ```
-$ ?
+$ touch /opt/videogames/ps4/sonic.info
 ```
 
 * Utiliser un éditeur de texte pour créer le fichier `/opt/videogames/nintendo/mario.info` et écrire les informations suivantes:
@@ -57,7 +57,7 @@ Les sources divergent quant à l'origine du patronyme. Le nom de Mario aurait é
 ```
 
 ```
-$ ?
+$ touch /opt/videogames/nintendo/mario.info
 ```
 
 > Le système contient 4 utilisateurs:
@@ -69,17 +69,17 @@ $ ?
 
 * Comment changer d'utilisateur pour devenir `luigi`
 ```
-$ ?
-```
+$ sudo -s -u luigi
   
 * Seul `mario` peut écrire dans le fichier `/opt/videogames/nintendo/mario.info`. Tous les autres peuvent le lire:
 ```
-$ ?
+$ chown mario /opt/videogames/nintendo/mario.info
+chmod 644 /opt/videogames/nintendo/mario.info
 ```
 
 * `sonic` autorise `tails` à lire le fichier `/opt/videogames/ps4/sonic.info`. Par contre les autres ne peuvent que voir le contenu du dossier `/opt/videogames/ps4/` (ils ne peuvent ni les lire, ni les écrire).
 ```
-$ ?
+  chmod 641 /opt/videogames/ps4
 ```
 
 * Donner une commande équivalente à:
@@ -87,25 +87,21 @@ $ ?
 cd /home/vagrant
 ```
 ```
-$ ?
+$ cd $HOME
 ```
-  
+  e chapitre, nous allons
 * Combien de lignes contient le fichier `/home/vagrant/videogames.txt
 ```
-$ ?
+$ 87584
 ```
   
 * Rechercher combien de fois le mot `Mario` apparait dans le fichir `/home/vagrant/videogames.txt
 ```
-$ ?
+$ 226
 ```
 
 * A quelle(s) ligne(s) le jeu `Secret of Mana` apparait dans le fichir `/home/vagrant/videogames.txt
 ```
-$ ?
+$ 2
 ```
-
-* A quelle(s) ligne(s) le jeu `Secret of Mana` apparait dans le fichir `/home/vagrant/videogames.txt
-```
-$ ?
 ```
