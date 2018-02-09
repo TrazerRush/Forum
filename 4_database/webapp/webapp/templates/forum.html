@@ -1,4 +1,65 @@
-{% for auteur in auteurs %}
-<h1>Hello {{ auteur }}</h1>
-<hr />
-{% endfor %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!-- CSS avec BootStrap -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="all" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" />
+    </head>
+
+    <body>
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Accueil Projet</a>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url_for('index') }}">Accueil</a></li>
+                        <li><a href="{{ url_for('forum') }}">Forum</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="float-right"><a href="#">Nombre de sujets : {{nombre_sujet}}</a></li>             
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="float-right"><a href="#">Dernier sujet mis en ligne : {{dernier_sujet_date[0]}} - {{dernier_sujet_date[1]}}</a></li>             
+                    </ul>*
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="float-right"><a href="#">Auteur le plus actif : {{auteur_actif[1]}}</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav> 
+
+        <h3><a href="{{url_for('formulaire')}}">Ajouter Un Topic</a></h3>      
+    
+        {% for sujet in sujets %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="pull-right"><a href="{{url_for('forum')}}"></a></h3>
+                    <form method="post" action="{{ url_for('suppression') }}" class="pull-right">
+                        <input type="hidden" name="id" value="{{sujet[0]}}" />
+                        <input type="submit" value="Supprimer" />
+                    </form>                    
+                    <h3>
+                        {% if sujet[2] == "Enzo" %} 
+                            <span class="glyphicon glyphicon-bitcoin"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-home"></span>
+                        {%endif%}
+                        {{sujet[1]}}
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+                    {{sujet[2]}}
+                    {{sujet[3]}}
+                </div>
+            </div>
+        {% endfor %}
+    
+    </body>
+</html>
