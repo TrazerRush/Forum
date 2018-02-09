@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <!-- CSS avec BootStrap -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="all" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" />
+    </head>
+
+    <body>
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Accueil Projet</a>
+
+                </div>
+            </div>
+        </nav>
+
+        <p>
+            <h3>
+                <span class="glyphicon glyphicon-pencil"></span>
+                Remplissez Ce Formulaire Pour Ajouter Un Topic
+            </h3>
+        </p>
+        <br/>
+
+        <form method="post" action="{{ url_for('traitement') }}">
+            <p>
+
+            <label for="auteur">Nom De L'Auteur (30 Caractères Max)</label> : <input type="text" name="auteur" autofocus required maxlength="30" placeholder="Votre Pseudo" size="30" />
+            <br>
+            <br>
+            <label for="sujet">Titre Du Topic (60 Caractères Max)</label> : <input type="text" name="sujet" required maxlength="60" placeholder="Sujet" size="60" />
+            <br>
+            <br>
+            <center><input type="submit" value="Envoyer" /></center>
+
+            </p>
+        </form>
+
+    </body>
+</html>
